@@ -1,19 +1,17 @@
 {
-    "name": "sirloya",
+    "name": "community bot",
     "description": "Modular WhatsApp Bot",
     "keywords": [
       "bot",
       "whatsapp",
       "stickers",
       "whatsapp-stickers",
-      "anime",
       "whatsapp-bot",
-      "whatsapp-sticker-bot",
       "whatsapp-botto"
     ],
-    "website": "https://github.com/satyammayy/sirloya",
-    "repository": "https://github.com/satyammayy/sirloya.git",
-    "logo": "https://i.ibb.co/HPqwr9Q/whatsapp-botto-void-init.png",
+    "website": "https://github.com/thegodofeverything/bot_community_edition",
+    "repository": "https://github.com/thegodofeverything/bot_community_edition.git",
+    "logo": "",
     "success_url": "/",
  
     "buildpacks": [

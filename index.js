@@ -1,4 +1,5 @@
 const { create } = require('@open-wa/wa-automate');
+const express = require("express")
 function start(client) {
   client.onGlobalParticipantsChanged(async (event) => {
     const host = (await client.getHostNumber()) + '@c.us';
@@ -277,3 +278,9 @@ create({
   args: ['--no-sandbox', '--disable-setuid-sandbox'],
   browserRevision: '737027',
 }).then((client) => start(client));
+
+
+const app = express();
+
+app.get('/', (req, res) => res.status(200).send('xd'));
+app.listen(process.env.PORT || 80);

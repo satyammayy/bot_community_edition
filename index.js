@@ -9,33 +9,8 @@ function start(client) {
         `✨Hello, Welcome to the group @${event.who.replace(
           '@c.us ✨',
           ''
-        )} \n\n✨ *Rules of the group: \n\n *1) No Introduction*\n _feels like meet up hub to me_ \n *2) Studies related chat is encouraged*\n *3) Anytype of fight or dispute is completely your problem and the group shall not hold responsibilty for it!*\n*4) If you dont behave you will be removed immediately*  \n\n ✨Material pamba singdo wjik fw hwjik fw collect twbdo  makha da leire \n\n  Type materials to pop up the menu or select the button below  ✨  \n\n1) Respect everyone here in this group \n\n2) Sharing memes is prohibited \n\n3) Don't send unnecessary messages! \n\n✨ *Feel free to ask and discuss lessons✨ \n `
+        )} \n\n✨ Here is the website for the materials! \n\n bit.ly/website_of_fortune `
       );
-
-  await client.sendButtons(
-          event.chat,
-          'Fajana Paro ko!',
-          [
-            { id: 'button1', text: 'Biology' },
-            { id: 'button2', text: 'Physics' },
-            { id: 'button3', text: 'Chemistry'},
-          ],
-          'Materials',
-          '-Community Bot'
-        );
-  await client.sendButtons(
-          event.chat,
-          'Fajana Paro ko!',
-          [
-            { id: 'button1', text: 'English' },
-            { id: 'button2', text: 'Manipuri' },
-            { id: 'button3', text: 'Alt-Enlish'},
-          ],
-          'Materials',
-          '-Community Bot'
-        );
-  client.sendPtt(event.chat, 'https://github.com/thegodofeverything/bot_community_edition/raw/main/resources/instructions-entry.mp3');
-
   }
   });
 
@@ -50,7 +25,8 @@ client.sendText(message.from, 'Humans make mistakes! \n\n So you dont need to de
    const command = (message.body || "").toLowerCase();
  
    if (command.includes("menu")){ 
-               await client.reply(message.from, ` \n\n✨ *Rules of the group: \n\n *1) No Introduction*\n _feels like meet up hub to me_ \n *2) Studies related chat is encouraged*\n *3) Anytype of fight or dispute is completely your problem and the group shall not hold responsibilty for it!*\n*4) If you dont behave you will be removed immediately*  \n\n ✨Material pamba singdo wjik fw hwjik fw collect twbdo  makha da leire \n\n  Type materials to pop up the menu or select the button below ✨  \n\n1) Respect everyone here in this group \n\n2) Sharing memes is prohibited \n\n3) Don't send unnecessary messages! \n\n✨ *Feel free to ask and discuss lessons✨ \n  `, message.id);
+    client.sendPtt(message.from, 'https://github.com/thegodofeverything/bot_community_edition/raw/main/resources/instructions-entry.mp3');             
+  await client.reply(message.from, ` \n\n✨ *Rules of the group: \n\n *1) No Introduction*\n _feels like meet up hub to me_ \n *2) Studies related chat is encouraged*\n *3) Anytype of fight or dispute is completely your problem and the group shall not hold responsibilty for it!*\n*4) If you dont behave you will be removed immediately*  \n\n ✨Material pamba singdo wjik fw hwjik fw collect twbdo  makha da leire \n\n  Type materials to pop up the menu or select the button below ✨  \n\n1) Respect everyone here in this group \n\n2) Sharing memes is prohibited \n\n3) Don't send unnecessary messages! \n\n✨ *Feel free to ask and discuss lessons✨ \n  `, message.id);
   await client.sendButtons(
           message.from,
           'Fajana Paro ko!',

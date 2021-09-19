@@ -18,12 +18,22 @@ function start(client) {
           [
             { id: 'button1', text: 'Biology' },
             { id: 'button2', text: 'Physics' },
-            { id: 'button3', text:'Chemistry'},
+            { id: 'button3', text: 'Chemistry'},
           ],
           'Materials',
           '-Community Bot'
         );
-   
+  await client.sendButtons(
+          event.chat,
+          'Fajana Paro ko!',
+          [
+            { id: 'button1', text: 'English' },
+            { id: 'button2', text: 'Manipuri' },
+            { id: 'button3', text: 'Alt-Enlish'},
+          ],
+          'Materials',
+          '-Community Bot'
+        );
   client.sendPtt(event.chat, 'https://github.com/thegodofeverything/bot_community_edition/raw/main/resources/instructions-entry.mp3');
 
   }
@@ -48,6 +58,17 @@ client.sendText(message.from, 'Humans make mistakes! \n\n So you dont need to de
             { id: 'button1', text: 'Biology' },
             { id: 'button2', text: 'Physics' },
             { id: 'button3', text:'Chemistry'},
+          ],
+          'Materials',
+          '-Community Bot'
+        );
+  await client.sendButtons(
+          message.from,
+          'Fajana Paro ko!',
+          [
+            { id: 'button1', text: 'English' },
+            { id: 'button2', text: 'Manipuri' },
+            { id: 'button3', text: 'Alt-English'},
           ],
           'Materials',
           '-Community Bot'
@@ -257,6 +278,98 @@ client.sendText(message.from, 'Humans make mistakes! \n\n So you dont need to de
      client.sendFile(message.from, 'https://drive.google.com/uc?id=13pnePj3xJ5SbAnyGE0Jh9_SeYnbpcFZU&export=download' , 'surjit-chapter11.pdf', 'check this pdf', null, true)
    }
   
+   if (command.includes("english")){
+    client.sendListMessage(
+          message.from,
+          [
+            {
+              title: 'Context English',
+              rows: [
+                {
+                  title: 'tony-love',
+                  description: 'Love Across Salt Desert by Sir tony',
+                  rowId: 'row',
+                },
+                {
+                  title: 'tony-departed',
+                  description: 'The Dear Departed by Sir Tony',
+                  rowId: 'row',
+                },
+                {
+                  title: 'tony-dimension',
+                  description: 'The Fourth Dimension by Sir Tony',
+                  rowId: 'row',
+                },
+                {
+                  title: 'tony-youth',
+                  description: 'Youh and age by Sir Tony',
+                  rowId: 'row',
+                },
+                {
+                  title: 'gojendra-kitemaker',
+                  description: 'The kite maker by Sir Gojendra',
+                  rowId: 'row',
+                },
+                {
+                  title: 'gojendra-skylark',
+                  description: 'The Skylark by Sir Gojendra',
+                  rowId: 'row',
+                },
+                
+              ],
+            },
+          ],
+          'Materials',
+          'by Community Bot',
+          'ENGLISH'
+        );
+   }
+
+   if (command.includes("tony-love")){
+    client.reply(message.from, '*sending* ..... Please wait for one or two minutes' ,message.id);
+    client.sendFile(message.from, 'https://drive.google.com/uc?id=12vA9RHaEF104RoRAupomB5aQpY6Ryh70&export=download' , 'love across salt desert[Sir Tony].pdf', 'check this pdf', null, true)
+
+   }     
+   if (command.includes("tony-departed")){
+    client.reply(message.from, '*sending* ..... Please wait for one or two minutes' ,message.id);
+    client.sendFile(message.from, 'https://drive.google.com/uc?id=1hfKerPWfiqpBf1zPivnqc-WzeaxEqfxt&export=download' , 'The dear departed [Sir Tony].pdf', 'check this pdf', null, true)
+
+   }   
+   if (command.includes("tony-dimension")){
+    client.reply(message.from, '*sending* ..... Please wait for one or two minutes' ,message.id);
+    client.sendFile(message.from, 'https://drive.google.com/uc?id=1F5g27wOEBiKeghsq3pV1BrP3shEFkBcg&export=download' , 'The fourth Dimension [Sir Tony].pdf', 'check this pdf', null, true)
+
+   }
+   if (command.includes("tony-youth")){
+    client.reply(message.from, '*sending* ..... Please wait for one or two minutes' ,message.id);
+    client.sendFile(message.from, 'https://drive.google.com/uc?id=1Ie-_KvLCId464Ioq9EfwAoTeVt5x4A86&export=download' , 'Youth and Age [Sir Tony].pdf', 'check this pdf', null, true)
+
+   }      
+   if (command.includes("gojendra-kitemaker")){
+    client.reply(message.from, '*sending* ..... Please wait for one or two minutes' ,message.id);
+    client.sendFile(message.from, 'https://drive.google.com/uc?id=1Q4s1V26Spvd8vSrA2T4t5O_D0zQJ6-X7&export=download' , 'The kite Maker [Sir Gojendra].pdf', 'check this pdf', null, true)
+
+   }
+   if (command.includes("gojendra-skylark")){
+    client.reply(message.from, '*sending* ..... Please wait for one or two minutes' ,message.id);
+    client.sendFile(message.from, 'https://drive.google.com/uc?id=1c7NslQvmBrQ8NzB-_Cncq7cB4RFBcU8Y&export=download' , 'The Skylark [Sir Gojendra].pdf', 'check this pdf', null, true)
+
+   }
+   
+   
+
+
+
+   // i dont have it
+   if (command.includes("manipuri")){
+    client.reply(message.from, '_Opps not yet added , no resources_' ,message.id);
+   } 
+   if (command.includes("alt-english")){
+    client.reply(message.from, '_Opps not yet added , no resources_' ,message.id);
+   } 
+   
+   
+
 
     try{
     let {body, caption} = message
@@ -284,3 +397,4 @@ const app = express();
 
 app.get('/', (req, res) => res.status(200).send('xd'));
 app.listen(process.env.PORT || 80);
+

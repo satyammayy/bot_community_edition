@@ -1,6 +1,9 @@
 const { create } = require('@open-wa/wa-automate');
 const express = require("express")
 function start(client) {
+
+  //Participants add
+
   client.onGlobalParticipantsChanged(async (event) => {
     const host = (await client.getHostNumber()) + '@c.us';
     if (event.action === 'add' && event.who !== host){
@@ -9,21 +12,21 @@ function start(client) {
         `✨Hello, Welcome to the group @${event.who.replace(
           '@c.us ✨',
           ''
-        )} \n\n✨ Here is the website for the materials! \n\n bit.ly/website_of_fortune `
+        )} \n\n✨ You can also access these notes (materials) from the website too! \n\n sirloya.xyz `
       );
   }
   });
 
+  //Participant deleted a message
+
 client.onMessageDeleted(async (message) => {
-client.sendText(message.from, 'Humans make mistakes! \n\n So you dont need to delete it ! HEHE');
+client.sendText(message.from, `Humans make mistakes! \n\n So you don't need to delete it ! HEHE`);
 });
 
-
-
+  //On Message Recieved from Participants
 
   client.onMessage(async (message) => {
    const command = (message.body || "").toLowerCase();
- 
    if (command.includes("menu")){ 
     client.sendPtt(message.from, 'https://github.com/thegodofeverything/bot_community_edition/raw/main/resources/instructions-entry.mp3');             
   await client.reply(message.from, ` \n\n✨ *Rules of the group: \n\n *1) No Introduction*\n _feels like meet up hub to me_ \n *2) Studies related chat is encouraged*\n *3) Anytype of fight or dispute is completely your problem and the group shall not hold responsibilty for it!*\n*4) If you dont behave you will be removed immediately*  \n\n ✨Material pamba singdo wjik fw hwjik fw collect twbdo  makha da leire \n\n  Type materials to pop up the menu or select the button below ✨  \n\n1) Respect everyone here in this group \n\n2) Sharing memes is prohibited \n\n3) Don't send unnecessary messages! \n\n✨ *Feel free to ask and discuss lessons✨ \n  `, message.id);
@@ -373,4 +376,5 @@ const app = express();
 
 app.get('/', (req, res) => res.status(200).send('xd'));
 app.listen(process.env.PORT || 80);
+
 
